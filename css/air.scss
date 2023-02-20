@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;600;700;800;900&display=swap');
+
+
+// COLOR
+	$black: #000;
+	$white: #fff;
+	$grey1: #333;
+	$grey2: #828282;
+	$yellow: #fee856;
+	$blue: #2a528a;
+	$red: #dd356e;
+
+
+
+
+// RESET STYLES
+* {
+	box-sizing: border-box;
+
+	margin: 0;
+	padding: 0;
+	
+	color: $black;
+
+	font-family: 'Inconsolata', monospace;
+	font-weight: 400;
+	line-height: 170%;
+	
+	
+	// BUTTON
+	a, button {text-decoration: none; cursor: pointer;}
+	
+	
+	// LIST
+	li {list-style: none;}
+}
+
+
+// WEBSITE'S STYLES
+body {
+	width: 100%;
+	font-size: 16px;
+	
+	
+	// CONTAINER
+	.container {max-width: 1130px; margin: 0 auto;}
+	
+	
+	// NAVIGATION
+	nav .nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			
+			width: 100%;
+			height: 100px;
+			
+			
+			// LOGO
+			.logo {
+				font-size: 2rem;
+				font-weight: 700;
+				
+				
+				span {color: $red; font-size: 2.2rem;}
+			}
+			
+			
+			// MENU 
+			ul.menu li {
+				display: inline-block;
+				
+				
+				a {
+					padding: 10px 15px;
+					
+					color: $grey1;
+					font-size: 1.2rem;
+					
+					transition: 0.3s;
+					
+					
+					// A ACTIVE 
+					&:hover, &.active {color: $black;}
+					
+					
+					// A LOGIN
+					&#login {
+						border-radius: 20px;
+						margin-right: 0;
+						
+						background: $red; 
+						color: $white;
+					}
+				}
+			}
+		}
+	
+	
+	// HEADER - BANNER
+	header#web-header {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		
+		width: 100%;
+		height: 100vh;
+		
+		
+		.big-text {
+			font-size: 3.6rem;
+			line-height: 4.3rem;
+			text-align: center;
+		}
+		
+		
+		.small-text {
+			margin-top: 30px;
+			font-size: 1.2rem;
+			
+			
+			a {color: $red; font-size: 1.2rem;}
+		}
+		
+		
+		.btn {
+			margin-top: 50px;
+			
+			
+			a {
+				border-radius: 30px;
+				
+				margin: 15px;
+				padding: 15px 30px;
+				
+				background: $yellow;
+				
+				font-size: 1.3rem;
+				
+				
+				&:first-child {background: $red; color: $white;}
+			}
+		}
+	}
+	
+	
+	// MAIN - CONTENT
+	main#web-main {
+		
+		
+		// ARTICLE - FEATURES
+		article#features {
+			width: 100%;
+			min-height: 100vh;
+			
+			background: $yellow;
+
+
+			// FEATURES GRID
+			.features {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-rows: 1fr 1fr;
+				grid-gap: 40px;
+
+				height: 100vh;
+				padding: 150px 0;
+
+
+				// FEATURES CARD
+				&__card {
+					display: grid;
+					grid-template-columns: 65px auto;
+					grid-gap: 15px;
+
+
+					// ICON
+					&__icon {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+
+						border-radius: 50%;
+
+						width: 65px;
+						height: 65px;
+
+						background: $white;
+
+						ion-icon {color: $red; font-size: 2.2rem;}
+					}
+
+
+					// CONTENT
+					&__content {
+
+
+						h4 {font-size: 1.4rem; font-weight: 500;}
+
+
+						p {
+							margin: 20px 0;
+
+							color: $grey1; 
+							font-size: 0.9rem;
+						}
+					}
+				}
+			}
+		}
+
+
+		// ARTICLE - CONCEPTUAL
+		article#wireframe {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+			width: 100%;
+			padding: 150px 0;
+
+
+			// TITLE
+			h2 {
+				margin-bottom: 100px;
+
+				font-size: 2.7rem;
+				line-height: 3.4rem;
+				text-align: center;
+			}
+
+
+			// CONCEPTUAL
+			.wireframe {
+				display: grid;
+				grid-template-columns: 3fr 5fr;
+				grid-gap: 50px;
+
+
+				// BLOCKQUOTE
+				&__quote {
+					box-shadow: 0 0 20px $grey2;
+					padding: 50px;
+
+
+					h3 {font-size: 1.6rem;}
+					p {margin: 50px 0; font-size: 1.1rem;}
+
+
+					.person__name {font-weight: 600; font-size: 1.1rem;}
+					.person__profession {color: $blue;}
+				}
+
+
+				// CONTENT
+				&__content p {font-size: 1.1rem;}
+				&__content p:nth-child(3) {
+					margin: 50px 0; 
+
+					font-size: 1rem;
+					font-weight: 600;
+				}
+			}
+		}
+
+
+		// ARTICLE - SLIDER TEMPLATE
+		article#slider-template {
+			padding: 100px 0;
+			background: $blue;
+
+
+			// SLIDER
+			.slider {
+				position: relative;
+
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-gap: 100px;
+
+				max-width: 1260px;
+				margin: auto;
+
+
+				// SLIDER HEADER 
+				&__header {
+
+
+					h2 {
+						margin-bottom: 20px;
+
+						color: $white;
+
+						font-size: 2.7rem; 
+						line-height: 3.4rem;
+					}
+					p {color: $white; font-size: 1.1rem;}
+				}
+
+
+				// SLIDER IMG
+				&__img img {
+					border-radius: 10px;
+					width: 100%; 
+					height: 600px;
+
+					object-fit: cover;
+				}
+
+
+				// SLIDER CONTENT 
+				&__content {
+					position: absolute;
+					bottom: 50px;
+					left: 20%;
+
+					border-radius: 10px;
+					box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+
+					width: 530px;
+					padding: 50px;
+
+					background: $yellow;
+
+
+					h3 {font-size: 2rem; line-height: 2.5rem;}
+					p {margin-top: 20px; color: $grey1;}
+				}
+			}
+		}
+		
+		
+		//ARTICLE - BLOG
+		article#blog {
+			padding: 150px 0;
+			
+			
+			.blog {
+				
+				
+				// BLOG HEADER
+				&__header {
+					margin-bottom: 150px;
+					
+					
+					h2 {font-size: 2.5rem; text-align: center;}
+					p {color: $grey2; font-size: 1.1rem; text-align: center;}
+				}
+				
+				
+				// BLOG CONTAINER
+				&__container {
+					display: grid;
+					grid-template-columns: 1fr 1fr 1fr;
+					grid-gap: 40px;
+					
+					width: 100%;
+					height: auto;
+					
+					
+					// BLOG CARD
+					.card {
+						box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+						width: 100%;
+						padding: 10px;
+						
+						
+						img {width: 100%; height: 300px; object-fit: cover;}
+						
+						
+						&__text {
+							padding: 25px;
+							
+							
+							// BLOG CARD HEADER
+							&__head .date {color: $grey2;}
+							&__head h3 {margin: 25px 0; font-size: 1.4rem;}
+							
+							
+							// BLOG CARD CONTENT
+							&__content p {font-size: 1.1rem;}
+							
+							
+							// BLOG CARD INTERACT
+							.interact {
+								display: flex;
+								justify-content: space-between;
+									
+								border-top: 1px solid #e6e6e6;
+								margin-top: 25px;
+								padding-top: 10px;
+								
+								width: 100%;
+								
+								
+								// COLUMN CENTER
+								.interact__item {
+									display: flex;
+									align-items: center;
+									
+									height: 100%;
+									
+									font-size: 1.2rem;
+									
+									
+									// ICON
+									ion-icon, .material-icons {font-size: 1.1rem;}
+								}
+								
+								
+								// INTERACT LEFT
+								&--left {
+									display: flex;
+									justify-content: flex-start;
+									
+									
+									.interact__item {margin-right: 10px;}
+									ion-icon {margin-right: 5px;}
+								}
+								
+								
+								// INTERACT RIGHT
+								&--right {
+									cursor: pointer;
+									
+									
+									.btn-readmore, 
+									.btn-readmore .material-icons {color: $red;}
+								
+									.btn-readmore .material-icons {margin-left: 10px;}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		
+		// ARTICLE - STARTED HIRE US
+		article#started {
+			padding: 120px 0;
+			background: $red;
+			
+			
+			.started {
+				max-width: 750px;
+				margin: auto;
+			
+				text-align: center;
+				
+				
+				h2 {color: $white; font-size: 2.6rem;}
+				p {color: $white; font-size: 1.1rem;}
+				
+				
+				.btn-contact {
+					margin-top: 50px;
+					
+					
+					span {
+						border-radius: 40px;
+						padding: 20px 35px;
+
+						background: $white;
+						color: $red;
+
+						font-size: 1.1rem;
+					}
+				}
+			}
+		}
+	}
+	
+	
+	// FOOTER - CONTENTINFO
+	footer#web-footer {
+		padding: 120px 0;
+		
+		
+		.contentinfo {
+			
+			
+			// CONTENTINFO LINK
+			a, a ion-icon {color: $red;}
+			
+
+			// CONTENTINFO TOP
+			&--top {
+				display: grid;
+				grid-template-columns: 4fr 1fr 1fr 3fr;
+				grid-gap: 100px;
+				
+				margin-bottom: 100px;
+				
+				
+				// CONTENTINFO TOP CARDS
+				&__cards {
+					font-size: 1.1rem;
+					
+					
+					h3 {margin-bottom: 20px; font-size: 1.5rem;}
+					p {color: $grey1;}
+					a:hover {text-decoration: underline;}
+				}
+			}
+			
+			
+			// CONTENTINFO BOTTOM
+			&--bottom {
+				width: 100%;
+				
+				
+				// COPYRIGHT
+				.copyright {text-align: center;}
+				
+				
+				// SNS
+				.sns {
+					margin-top: 30px;
+					text-align: center;
+					
+					
+					a {margin: 0 20px;}
+					a ion-icon {font-size: 1.2rem;}
+				}
+			}
+		}
+	}
+}
